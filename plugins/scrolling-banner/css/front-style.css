@@ -1,0 +1,136 @@
+/* Reset all potential spacing */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.scrolling-banner {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 9999;
+    overflow: hidden;
+    display: block !important;
+    background-color: #ffffff;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Ensure wp-admin bar doesn't affect spacing */
+body.admin-bar .scrolling-banner {
+    margin-top: 0 !important;
+}
+
+/* Force parent-header to start immediately after banner */
+.parent-header {
+    margin-top: 0 !important;
+}
+
+/* Ensure banner appears above everything else */
+body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+
+/* Target the parent container to ensure banner appears first */
+body > .site-container,
+body > #page,
+body > .site-inner,
+body > .wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.scrolling-banner-content {
+    white-space: nowrap;
+    display: inline-block;
+    padding-left: 100%;
+    /* Increased base duration to 40s for slower scroll */
+    animation: scroll-left 40s linear infinite;
+    /* Prevent text selection during scroll */
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Pause animation on hover */
+.scrolling-banner-content:hover {
+    animation-play-state: paused;
+}
+
+.scrolling-banner-content img {
+    max-height: 30px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+
+.scrolling-banner-content a {
+    text-decoration: underline;
+}
+
+.scrolling-banner-close {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    padding: 5px;
+    color: inherit;
+    opacity: 0.7;
+    z-index: 999999;
+}
+
+.scrolling-banner-close:hover {
+    opacity: 1;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Ensure banner appears above everything */
+#masthead,
+.site-header,
+.main-navigation,
+.nav-primary {
+    position: relative;
+    z-index: 99999;
+}
+
+/* Update header z-index to be higher */
+.parent-header,
+.site-header,
+.header {
+    position: relative;
+    z-index: 100;
+}
+
+/* Remove any top margin/padding adjustments */
+body {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Remove admin bar adjustments if they exist */
+#wpadminbar + .scrolling-banner {
+    top: auto;
+}
+
+@media screen and (max-width: 782px) {
+    #wpadminbar + .scrolling-banner {
+        top: 46px;
+    }
+} 

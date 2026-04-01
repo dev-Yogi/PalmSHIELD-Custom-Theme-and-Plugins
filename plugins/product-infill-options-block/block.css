@@ -1,0 +1,919 @@
+/* ============================================
+   PRODUCT INFILL OPTIONS BLOCK
+   Version 3.0 - Two-tier tab system
+   ============================================ */
+
+/* ============================================
+   CSS CUSTOM PROPERTIES (Set via inline styles)
+   ============================================ */
+.product-infill-options {
+    --primary-tab-color: #e02826;
+    --header-bg-color: #00000021;
+    --inactive-tab-color: #1e335f;
+    --light-gray: #e0e0e0;
+    --text-dark: #333;
+    --white: #ffffff;
+}
+
+/* ============================================
+   PRIMARY CATEGORY TABS (Top Row) - Overlapping folder style
+   ============================================ */
+.category-tabs-wrapper {
+    width: 100%;
+    background: transparent;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.category-tab-buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    min-width: max-content;
+    margin: 0;
+    /* padding: 0 0 0 8px; */
+    border-bottom: 2px solid var(--white);
+    gap: 0;
+}
+
+.category-tab-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 15px;
+    margin-left: -8px;
+    background: var(--inactive-tab-color);
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, z-index 0.2s ease;
+    white-space: nowrap;
+    flex-grow: 0;
+    position: relative;
+    z-index: 1;
+    font-family: var(--wp--preset--font-family--poppins);
+}
+
+.category-tab-button:first-child {
+    margin-left: 0;
+}
+
+.category-tab-button:hover {
+    background: var(--wp--preset--color--primary);
+    z-index: 2;
+}
+
+.category-tab-button.active {
+    background: var(--primary-tab-color);
+    color: var(--white);
+    z-index: 3;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.249), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-tab-button .category-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* ============================================
+   MOBILE CATEGORY DROPDOWN (hidden on desktop)
+   ============================================ */
+.category-tabs-mobile-dropdown {
+    display: none;
+    position: relative;
+    width: 100%;
+}
+
+.category-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--inactive-tab-color);
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: var(--wp--preset--font-family--poppins);
+    text-align: left;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.category-dropdown-trigger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.category-dropdown-trigger .category-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.category-dropdown-label {
+    flex: 1;
+}
+
+.category-dropdown-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.category-tabs-mobile-dropdown.is-open .category-dropdown-chevron {
+    transform: rotate(180deg);
+}
+
+.category-dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 4px;
+    padding: 4px 0;
+    background: var(--white);
+    border: 2px solid var(--inactive-tab-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    max-height: min(70vh, 320px);
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.category-tabs-mobile-dropdown.is-open .category-dropdown-menu {
+    display: block;
+}
+
+.category-dropdown-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    font-family: var(--wp--preset--font-family--poppins);
+}
+
+.category-dropdown-option:hover,
+.category-dropdown-option:focus {
+    background: var(--light-gray);
+    outline: none;
+}
+
+.category-dropdown-option .category-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.infill-section-header {
+    background: var(--header-bg-color);
+    color: #5a5a5a;
+    padding: 2rem;
+    text-align: left;
+}
+
+.infill-title {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.2;
+    color: #5a5a5a;
+}
+
+.infill-title .category-name {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.infill-title .infill-label {
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.infill-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    opacity: 0.9;
+}
+
+.infill-description p {
+    margin: 0;
+}
+
+/* ============================================
+   SECONDARY ORIENTATION TABS (configuration – demoted)
+   Segmented control / pill style; clearly subordinate to category tabs
+   ============================================ */
+.orientation-tabs-wrapper {
+    background: transparent;
+    width: 100%;
+    padding: 0.5rem 0 0.75rem 0;
+}
+
+.orientation-tab-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+}
+
+.orientation-tab-button {
+    flex: 0 1 auto;
+    min-width: 0;
+    padding: 0.375rem 1rem;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    color: #6b6b6b;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.orientation-tab-button:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #4a4a4a;
+}
+
+.orientation-tab-button.active {
+    background: color-mix(in srgb, var(--wp--preset--color--primary) 20%, rgba(0, 0, 0, 0.1));
+    border-color: color-mix(in srgb, var(--wp--preset--color--primary) 20%, rgba(0, 0, 0, 0.1));
+    color: #333;
+}
+
+/* ============================================
+   CATEGORY CONTENT PANELS
+   ============================================ */
+.category-content {
+    display: none;
+}
+
+.category-content.active {
+    display: block;
+}
+
+/* ============================================
+   ORIENTATION CONTENT PANELS
+   ============================================ */
+.orientation-content {
+    display: none;
+    padding: 2rem;
+    background: var(--white);
+}
+
+.orientation-content.active {
+    display: block;
+}
+
+/* ============================================
+   PRODUCT GRID
+   ============================================ */
+.product-options-grid {
+    display: grid;
+    width: 100%;
+}
+
+.product-options-grid.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.product-options-grid.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.product-options-grid.columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.product-options-grid.columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.product-options-grid.gap-small {
+    gap: 1rem;
+}
+
+.product-options-grid.gap-medium {
+    gap: 1.5rem;
+}
+
+.product-options-grid.gap-large {
+    gap: 2.5rem;
+}
+
+/* ============================================
+   PRODUCT OPTION CARDS
+   ============================================ */
+.product-option {
+    text-align: center;
+    position: relative;
+}
+
+.product-option a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.product-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.product-option img {
+    width: 100%;
+    max-width: 200px;
+    max-height: 250px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.product-option:hover img {
+    transform: scale(1.02);
+}
+
+.product-caption {
+    margin: 0.75rem 0 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--text-dark);
+    text-transform: capitalize;
+}
+
+/* ============================================
+   FILE BADGES (CAD, PDF, etc.)
+   ============================================ */
+.file-badges {
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.file-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    background: var(--white);
+    border: 1px solid var(--inactive-tab-color);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.file-badge:hover {
+    background: var(--light-gray);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.file-badge svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   ORIENTATION FOOTER TEXT
+   ============================================ */
+.orientation-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--light-gray);
+    color: var(--header-bg-color);
+    font-weight: 500;
+}
+
+/* ============================================
+   COLOR GALLERIES
+   ============================================ */
+.color-galleries-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.color-gallery-group {
+    margin-bottom: 2.5rem;
+}
+
+.color-gallery-group:last-child {
+    margin-bottom: 0;
+}
+
+.color-gallery-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    color: #5a5a5a;
+}
+
+.color-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.color-swatch {
+    text-align: center;
+}
+
+.color-swatch img {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid var(--inactive-tab-color);
+    object-fit: cover;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-swatch:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.color-swatch-name {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    text-transform: capitalize;
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+.infill-empty-state {
+    padding: 3rem;
+    text-align: center;
+    background: #f9f9f9;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+}
+
+.infill-empty-state p {
+    margin: 0;
+    color: #666;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Contain block and prevent horizontal overflow on all viewports */
+.product-infill-options {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    .category-tabs-wrapper {
+        padding-bottom: 4px;
+        /* space for scrollbar */
+    }
+
+    .category-tab-button {
+        padding: 12px 16px;
+        font-size: 0.8rem;
+        min-height: 44px;
+        /* touch-friendly */
+    }
+
+    .category-tab-button .category-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .infill-section-header {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .infill-title {
+        font-size: 1.75rem;
+    }
+
+    .infill-description {
+        font-size: 0.95rem;
+    }
+
+    .orientation-tab-button {
+        padding: 0.35rem 0.875rem;
+        font-size: 0.7875rem;
+        min-height: 36px;
+    }
+
+    .orientation-content {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .product-options-grid.columns-2,
+    .product-options-grid.columns-3,
+    .product-options-grid.columns-4,
+    .product-options-grid.columns-5 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-options-grid.gap-large {
+        gap: 2rem;
+    }
+
+    .orientation-footer {
+        margin-top: 1.5rem;
+        padding-top: 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    .color-gallery-title {
+        font-size: 1.1rem;
+    }
+
+    .color-gallery-grid {
+        gap: 1.25rem;
+    }
+}
+
+/* Mobile landscape / small tablet (810px and below) */
+@media (max-width: 810px) {
+    /* Category tabs: use dropdown instead of horizontal scroll */
+    .category-tabs-wrapper {
+        overflow-x: visible;
+        padding: 12px 0 16px 0;
+        border-bottom: 2px solid var(--white);
+    }
+
+    .category-tab-buttons {
+        display: none;
+    }
+
+    .category-tabs-mobile-dropdown {
+        display: block;
+        padding: 0 12px;
+    }
+
+    .infill-section-header {
+        padding: 1.25rem 1rem;
+    }
+
+    .infill-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .infill-description {
+        font-size: 0.9rem;
+        max-width: 100%;
+    }
+
+    .orientation-tab-button {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+    }
+
+    .orientation-content {
+        padding: 1.25rem 1rem;
+    }
+
+    .product-options-grid.columns-2,
+    .product-options-grid.columns-3,
+    .product-options-grid.columns-4,
+    .product-options-grid.columns-5 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .product-options-grid.gap-large {
+        gap: 1.5rem;
+    }
+
+    .product-option img {
+        max-width: 100%;
+        max-height: 200px;
+    }
+
+    .product-caption {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .file-badges {
+        right: 0;
+        bottom: 0;
+        gap: 3px;
+    }
+
+    .file-badge {
+        padding: 5px 6px;
+        font-size: 0.7rem;
+    }
+
+    .orientation-footer {
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .color-galleries-container {
+        padding: 0;
+    }
+
+    .color-gallery-group {
+        margin-bottom: 1.75rem;
+    }
+
+    .color-gallery-title {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .color-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 1rem;
+    }
+
+    .color-swatch img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .color-swatch-name {
+        font-size: 0.8rem;
+    }
+
+    .infill-empty-state {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Mobile portrait (600px and below) */
+@media (max-width: 600px) {
+    .category-tab-button {
+        padding: 10px 14px;
+        font-size: 0.75rem;
+        min-height: 44px;
+    }
+
+    .category-tab-button .category-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .infill-section-header {
+        padding: 1rem 0.875rem;
+    }
+
+    .infill-title {
+        font-size: 1.35rem;
+        line-height: 1.3;
+    }
+
+    .infill-description {
+        font-size: 0.875rem;
+    }
+
+    .orientation-tab-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .orientation-tab-button {
+        width: 100%;
+        min-width: auto;
+        min-height: 44px;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .orientation-content {
+        padding: 1rem 0.875rem;
+    }
+
+    .product-options-grid.columns-2,
+    .product-options-grid.columns-3,
+    .product-options-grid.columns-4,
+    .product-options-grid.columns-5 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .product-options-grid.gap-medium {
+        gap: 1rem;
+    }
+
+    .product-options-grid.gap-large {
+        gap: 1.25rem;
+    }
+
+    .product-option img {
+        max-width: 100%;
+        max-height: 180px;
+    }
+
+    .product-caption {
+        font-size: 0.875rem;
+        margin-top: 0.375rem;
+    }
+
+    .file-badges {
+        right: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2px;
+    }
+
+    .file-badge span {
+        display: none;
+    }
+
+    .file-badge {
+        padding: 6px;
+        min-width: 32px;
+        min-height: 32px;
+        justify-content: center;
+    }
+
+    .orientation-footer {
+        margin-top: 1rem;
+        padding-top: 0.875rem;
+        font-size: 0.85rem;
+    }
+
+    .color-gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .color-swatch img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .color-swatch-name {
+        font-size: 0.75rem;
+    }
+
+    .infill-empty-state {
+        padding: 1.5rem 0.875rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Very small screens (400px and below) */
+@media (max-width: 400px) {
+    .category-tab-button {
+        padding: 8px 10px;
+        font-size: 0.7rem;
+    }
+
+    .category-tab-button .category-icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .infill-title {
+        font-size: 1.2rem;
+    }
+
+    .product-options-grid.columns-2,
+    .product-options-grid.columns-3,
+    .product-options-grid.columns-4,
+    .product-options-grid.columns-5 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .product-option img {
+        max-width: 180px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .product-caption {
+        font-size: 0.85rem;
+    }
+
+    .color-gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .color-swatch img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .color-swatch-name {
+        font-size: 0.7rem;
+    }
+}
+
+/* Touch device improvements: reduce hover scale on tap */
+@media (hover: none) {
+    .product-option:hover img {
+        transform: none;
+    }
+
+    .product-option:active img {
+        transform: scale(0.98);
+    }
+
+    .color-swatch:hover img {
+        transform: none;
+    }
+
+    .color-swatch:active img {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   SCROLLBAR STYLING (Category Tabs)
+   ============================================ */
+.category-tabs-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.category-tabs-wrapper::-webkit-scrollbar-track {
+    background: var(--inactive-tab-color);
+}
+
+.category-tabs-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.category-tabs-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+
+    .category-tabs-wrapper,
+    .orientation-tabs-wrapper {
+        display: none;
+    }
+
+    .category-content,
+    .orientation-content {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    .product-options-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}

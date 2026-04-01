@@ -1,0 +1,13 @@
+/*
+ * Editor styles for Product Card Grid block.
+ *
+ * Mirrors the frontend grid layout so the editor preview matches what
+ * visitors see.  The CSS custom property --product-card-grid-columns is set
+ * via inline style on the wrapper in template-product-grid.php.
+ */
+
+ .product-card-grid > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: grid !important;
+  grid-template-columns: repeat( var( --product-card-grid-columns, 3 ), 1fr );
+  gap: 1.5rem;
+}

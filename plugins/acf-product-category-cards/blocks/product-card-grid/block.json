@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "acf/product-card-grid",
+    "title": "Product Card Grid",
+    "description": "A container block for product category cards with adjustable columns.",
+    "category": "layout",
+    "icon": "screenoptions",
+    "keywords": [ "grid", "layout", "cards" ],
+    "providesContext": {
+        "productCardGrid/columns": "columns"
+    },
+    "supports": {
+        "align": false,
+        "jsx": true
+    },
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "template-product-grid.php"
+    },
+    "editorStyle": "file:../../editor-style.css"
+}

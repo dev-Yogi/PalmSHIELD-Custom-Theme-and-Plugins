@@ -1,0 +1,302 @@
+/**
+ * PalmSHIELD Mega Menu Admin Styles
+ * Version 1.1.0 - With Repeater Fields
+ */
+
+.psmm-admin-wrap {
+    max-width: 1200px;
+}
+
+.psmm-admin-intro {
+    background: #fff;
+    padding: 15px 20px;
+    border-left: 4px solid #1e335f;
+    margin: 20px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.psmm-admin-intro code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.psmm-tip {
+    margin-top: 10px;
+    color: #1e335f;
+    font-size: 13px;
+}
+
+.psmm-section {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+}
+
+.psmm-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Tabs */
+.psmm-tabs {
+    margin-top: 20px;
+}
+
+.psmm-tab-content {
+    display: none;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+}
+
+.psmm-tab-content.active {
+    display: block;
+}
+
+.psmm-tab-content h3 {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #1e335f;
+}
+
+.psmm-tab-content h3:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* ==========================================
+   REPEATER FIELDS
+   ========================================== */
+
+.psmm-repeater {
+    margin-bottom: 20px;
+}
+
+.psmm-repeater-items {
+    margin-bottom: 10px;
+}
+
+.psmm-repeater-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+}
+
+.psmm-repeater-item:hover {
+    background: #f5f5f5;
+    border-color: #c0c0c0;
+}
+
+.psmm-item-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+}
+
+.psmm-item-fields input.regular-text {
+    flex: 1;
+    min-width: 180px;
+    margin: 0;
+}
+
+.psmm-item-fields .psmm-field-title {
+    flex: 1.2;
+    font-weight: 500;
+}
+
+.psmm-item-fields .psmm-field-description {
+    flex: 1.5;
+}
+
+.psmm-item-fields .psmm-field-url {
+    flex: 1.3;
+}
+
+/* Remove Button */
+.psmm-remove-item {
+    flex-shrink: 0;
+    padding: 4px 8px !important;
+    height: 32px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a00;
+    border-color: #ddd;
+    background: #fafafa;
+}
+
+.psmm-remove-item:hover {
+    background: #fee;
+    border-color: #c00;
+    color: #c00;
+}
+
+.psmm-remove-item .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+/* Add Button */
+.psmm-add-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.psmm-add-item .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+
+.psmm-add-item:hover {
+    border-color: #1e335f;
+    color: #1e335f;
+}
+
+/* ==========================================
+   LINK GROUPS (Single items)
+   ========================================== */
+
+.psmm-link-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+.psmm-link-group label {
+    min-width: 150px;
+    font-weight: 600;
+    color: #1e335f;
+}
+
+.psmm-link-group input.regular-text {
+    flex: 1;
+    min-width: 200px;
+}
+
+.psmm-view-all-link {
+    background: #f0f7ff;
+    border-color: #c5d9ed;
+    margin-top: 10px;
+}
+
+.psmm-view-all-link label {
+    color: #0073aa;
+}
+
+/* ==========================================
+   FEATURED GROUPS
+   ========================================== */
+
+.psmm-featured-group {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    border: 1px solid #e0e0e0;
+}
+
+.psmm-featured-group p {
+    margin-bottom: 15px;
+}
+
+.psmm-featured-group p:last-child {
+    margin-bottom: 0;
+}
+
+.psmm-featured-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1e335f;
+}
+
+.psmm-featured-group textarea {
+    width: 100%;
+}
+
+.psmm-featured-group input.regular-text {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .psmm-repeater-item {
+        flex-direction: column;
+    }
+    
+    .psmm-item-fields {
+        width: 100%;
+    }
+    
+    .psmm-remove-item {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 782px) {
+    .psmm-link-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .psmm-link-group label {
+        min-width: auto;
+    }
+    
+    .psmm-link-group input.regular-text {
+        width: 100%;
+    }
+    
+    .psmm-item-fields {
+        flex-direction: column;
+    }
+    
+    .psmm-item-fields input.regular-text {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* ==========================================
+   ANIMATIONS
+   ========================================== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.psmm-repeater-item {
+    animation: fadeIn 0.2s ease;
+}

@@ -1,0 +1,27 @@
+{
+    "name": "acf/product-infill-options",
+    "title": "Product Infill Options Block",
+    "description": "Display product categories with nested orientation tabs, infill options, and color galleries in a two-tier tab system",
+    "category": "design",
+    "icon": "grid-view",
+    "keywords": ["product", "infill", "options", "palmshield", "tabs", "colors", "categories", "louvered", "screening"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "supports": {
+        "align": ["wide", "full"],
+        "anchor": true,
+        "html": false,
+        "color": {
+            "background": false,
+            "text": false
+        },
+        "spacing": {
+            "margin": true,
+            "padding": false
+        }
+    },
+    "style": ["file:./block.css"],
+    "apiVersion": 2
+}

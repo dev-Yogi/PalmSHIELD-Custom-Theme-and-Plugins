@@ -1,0 +1,130 @@
+#amflp-page-intro-section{
+    padding-top: 100px;
+}
+#amflp_meta_box .inside>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-template-default .menu-default {
+    margin-top: -60px;
+}
+
+.city-template-default main#site-content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 2em;
+    background-color: white;
+}
+
+.city-template-default main#site-content>section {
+    /*background-color: transparent;*/
+    color: #5a5a5a;
+    font-size: 1.1em;
+    font-family: 'Catamaran', sans-serif;
+    line-height: 1.6em;
+}
+
+.city-template-default main#site-content section>div.container {
+    width: 100%;
+    max-width: 1250px;
+    position: relative;
+}
+
+
+body.city-template-default #main-content main#site-content>section>h1,
+body.city-template-default #main-content main#site-content>section>h2 {
+    color: white;
+}
+
+#amflp-faqs h2 {
+    color: #04487c;
+}
+
+.our-work-4 h3,
+.our-work-3 h3,
+.our-work-2 h3,
+.our-work-1 h3 {
+    color: white;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.city-template-default main#site-content>section:first-child {
+    padding-top: 0;
+}
+
+.city-template-default main#site-content>section:last-child {
+    padding-bottom: 0;
+}
+
+.city-template-default main#site-content>section .wp-block-button {
+    display: flex;
+    justify-content: center;
+}
+
+section.amflp-split>.container .amflp-split-col {
+    flex: 1;
+    padding: 2%;
+}
+
+section#amflp-faqs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#amflp-faqs .faqs-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+section#amflp-faqs .faqs-container .faq {
+    flex: 1;
+    padding: 2%;
+}
+
+body.single-city section:nth-child(even) a,
+body.single-city section:nth-child(even) a:active,
+body.single-city section:nth-child(even) a:visited {
+    text-decoration: none;
+}
+
+#cities-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city-landing-page-cta-text {
+    color: white;
+   
+    padding: 20px;
+}
+
+.city-landing-page-cta-img-1 {
+    position: relative;
+}
+.large-container {
+    width: 100% !important;
+    padding: 0px !important;
+}
+
+
+.svg-class {
+    position: relative;
+    bottom: 50px;
+}
+
+.full-width {
+    min-width: 100%;
+    padding: 0 !important;
+}
+
+.city-template-default .wp-block-buttons {
+    display: flex;
+}
+
+
+

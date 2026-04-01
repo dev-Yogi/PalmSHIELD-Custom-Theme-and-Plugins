@@ -1,0 +1,158 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Bebas Neue, sans-serif",
+                    "slug": "bebas-neue",
+                    "name": "Bebas Neue"
+                },
+                {
+                    "fontFamily": "Poppins, sans-serif",
+                    "slug": "poppins",
+                    "name": "Poppins"
+
+                }
+            ],
+            "fontSizes": [
+			{
+				"slug": "extra-small",
+				"size": "12px",
+				"name": "Extra small"
+			},
+            {
+				"slug": "small",
+				"size": "14px",
+				"name": "Small"
+			},
+			{
+				"slug": "medium-small",
+				"size": "16px",
+				"name": "Medium small"
+			},
+            {
+				"slug": "medium",
+				"size": "20px",
+				"name": "Medium"
+			},
+            {
+				"slug": "large",
+				"size": "24px",
+				"name": "Large"
+			},
+            {
+				"slug": "larger",
+				"size": "32px",
+				"name": "Larger"
+			}
+            
+            
+		]
+        },
+		"color": {
+			"palette": [
+				{
+					"color": "#ffffff",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#1E335F",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#50b8e9",
+					"name": "Primary",
+					"slug": "primary"
+				},
+                {
+					"color": "#5a5a5a",
+					"name": "Default",
+					"slug": "default"
+				},
+                {
+					"color": "#e02826",
+					"name": "Bright",
+					"slug": "bright"
+				},
+				{
+					"color": "#ef8d27",
+					"name": "PalmShade Orange",
+					"slug": "palmshade-orange"
+				},
+				{
+					"color": "#2A2E34FF",
+					"name": "PalmShield Acoustic",
+					"slug": "palmshield-acoustic"
+				},
+				{
+					"color": "#EDEDED",
+					"name": "Acoustic Font Color",
+					"slug": "acoustic-font"
+				},
+				{
+					"color": "#8A3324",
+					"name": "PalmShield Rooftop",
+					"slug": "palmshield-rooftop"
+				},
+				{
+					"color": "#F0F0F0",
+					"name": "Rooftop Font Color",
+					"slug": "rooftop-font"
+				},
+				{
+					"color": "#333333",
+					"name": "Rooftop Accent Color",
+					"slug": "rooftop-accent"
+				}
+			]
+		},
+        "custom": {
+			"lineHeight": {
+				"xs": "1",
+				"sm": "1.25",
+				"md": "1.5",
+				"lg": "1.75"
+			}
+
+		},
+        "layout": {
+            "contentSize": "80%",
+            "wideSize": "100%"
+        }
+        
+	},
+	"styles": {
+        "typography": {
+			"lineHeight": "var:custom|line-height|md"
+		},
+		"color": {
+			"text": "var:preset|color|default",
+			"background": "var:preset|color|base"
+		},
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|contrast"
+				},
+                "typography":{
+                    "textDecoration":"none"
+                }
+			},
+            "button":{
+                "color":{
+                    "text":"var:preset|color|contrast",
+                    "background":"var:preset|color|bright"
+                }
+            },
+            "heading":{
+                "color": {
+                    "text":"var:preset|color|contrast"
+                }
+            }
+		}
+	}
+}

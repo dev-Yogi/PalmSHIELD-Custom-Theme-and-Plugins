@@ -1,0 +1,233 @@
+/* Product Shades Specific Styles */
+.woocommerce .add-request-quote-button.button:hover {
+    background-color: #ef8d27 !important;
+}
+
+.woocommerce-loop-product__title {
+    color: #ef8d27 !important;
+}
+
+.yith_ywraq_add_item_browse_message a{
+    color: #e02826 !important;
+}
+/* Tabs Styling */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border-top: 1px solid #e02826 !important;
+    border-left: 1px solid #e02826 !important;
+    border-right: 1px solid #e02826 !important;
+    margin: 0 0.1em !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: #e02826 !important;
+    font-family: var(--wp--preset--font-family--bebas-neue) !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: #ef8d27 !important;
+    border-radius: 4px 4px 0 0 !important;
+    padding: 0.2em 1em !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    color: #fff !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 1em !important;
+    border-bottom: 2px solid #ef8d27 !important;
+}
+
+/* Content Styling */
+.woocommerce-Tabs-panel h2,
+#no-variation-message h3,
+ul.file-list li a,
+td.woocommerce-product-attributes-item__value p a {
+    color: #5a5a5a !important;
+}
+
+span.posted_in a,
+span.tagged_as a {
+    color: #ef8d27 !important;
+}
+
+/* Shade Options Layout Styles */
+.canopy-fabric-vendor-section{
+    clear: both;
+}
+.canopy-vender-info-section h2{
+    color:#e02826 !important;
+}
+.fabric-vendor a{
+    color: #ef8d27 !important;
+}
+.shade-options-wrapper {
+    margin: 2em 0;
+    clear: both;
+}
+
+.shade-option-section {
+    margin-bottom: 2em;
+}
+
+.shade-options-wrapper .section-title {
+    margin: 0;
+    color: #e02826 !important;
+    font-family: var(--wp--preset--font-family--bebas-neue);
+    font-size: 1.5em;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin-top: 1em;
+}
+
+.option-item {
+    padding: 1em;
+    border-radius: 4px;
+}
+
+.option-item h4 {
+    margin: 0;
+    color: #fff !important;
+    background-color: #ef8d27 !important;
+    padding: 8px 0.5em;
+    font-family: var(--wp--preset--font-family--poppins);
+    border-radius: 4px;
+}
+
+.option-item img {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
+    border: 1px solid #eee;
+}
+
+.option-description {
+    margin-top: 1em;
+    text-align: center;
+    color: #333;
+    line-height: 1.6;
+}
+
+div.canopy-fabric-vendor-section>.options-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.fabric-vendor {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 2em 0;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .options-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1em;
+    }
+
+    .option-item {
+        padding: 0.8em;
+    }
+
+    .option-item h4 {
+        font-size: 0.9em;
+        padding: 6px 0.8em;
+    }
+}
+
+/* Tabs Section */
+
+.related.products>h2 {
+    color: #e02826 !important;
+}
+
+/* Add specificity for WooCommerce elements */
+.woocommerce div.product .product_title,
+.woocommerce-page div.product .product_title {
+    color: #e02826 !important;
+}
+
+
+/* WooCommerce Tabs - Exact Selector Match */
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border-top: 1px solid #e02826 !important;
+    border-left: 1px solid #e02826 !important;
+    border-right: 1px solid #e02826 !important;
+    margin: 0 0.1em !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    font-weight: 600 !important;
+    color: #e02826 !important;
+    font-family: var(--wp--preset--font-family--bebas-neue) !important;
+    letter-spacing: 1px !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: #ef8d27 !important;
+    border-radius: 4px 4px 0 0 !important;
+    padding: 0.2em 1em !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+    color: #fff !important;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 1em !important;
+    border-bottom: 2px solid #ef8d27 !important;
+}
+
+/* Override any WooCommerce version-specific styles */
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li,
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li.active {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Additional specificity for tab links */
+.woocommerce-tabs.wc-tabs-wrapper ul.tabs li a:where(:not(.wp-element-button)) {
+    color: #e02826 !important;
+    text-decoration: none !important;
+}
+
+/* Force override any existing borders or backgrounds */
+.woocommerce div.product .woocommerce-tabs ul.tabs li::after,
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+    display: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.woocommerce-Tabs-panel h2,
+#no-variation-message h3,
+ul.file-list li a,
+td.woocommerce-product-attributes-item__value p a,
+span.posted_in a,
+span.tagged_as a {
+    color: #5a5a5a !important;
+}
+
+span.posted_in a,
+span.tagged_as a {
+    color: #ef8d27 !important;
+}

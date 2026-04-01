@@ -1,0 +1,169 @@
+/* =============================================================================
+   Product Card Block
+   ============================================================================= */
+
+/**
+ * Card wrapper.
+ * overflow: hidden clips the absolutely-positioned <img> to the border-radius.
+ */
+ .product-card-block {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  /* Skeleton background while image loads */
+  background-color: #1a2a4a;
+}
+
+/**
+* Background image.
+* Using <img> instead of CSS background-image lets the browser's preload
+* scanner discover it immediately and benefit from fetchpriority / srcset.
+*/
+.product-card-block .card-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  /* Smooth fade-in once loaded */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-block .card-bg-image.is-loaded {
+  opacity: 1;
+}
+
+/* Fade in immediately for browsers that report complete before JS runs */
+.product-card-block .card-bg-image[loading="eager"] {
+  opacity: 1;
+}
+
+/* Overlay */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content sits above overlay */
+.card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.card-content h3 {
+  background-color: #1E335F;
+  color: #fff;
+  padding: 5px;
+  font-size: 20px;
+  width: 85%;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 2px solid #50b8e9;
+  letter-spacing: 1px;
+  display: none; /* shown via theme override when needed */
+}
+
+.card-button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  color: #1E335F;
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card-button:hover,
+.card-button:focus-visible {
+  background-color: #50b8e9;
+  color: #fff;
+  outline: none;
+}
+
+/* =============================================================================
+ Product Card Grid
+ ============================================================================= */
+
+.product-card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Column utility classes — inline style already sets the repeat() value,
+ but these serve as a readable fallback and reference. */
+.product-card-grid.columns-1 { grid-template-columns: repeat(1, 1fr); }
+.product-card-grid.columns-2 { grid-template-columns: repeat(2, 1fr); }
+.product-card-grid.columns-3 { grid-template-columns: repeat(3, 1fr); }
+.product-card-grid.columns-4 { grid-template-columns: repeat(4, 1fr); }
+.product-card-grid.columns-5 { grid-template-columns: repeat(5, 1fr); }
+
+/* =============================================================================
+ Responsive breakpoints
+ ============================================================================= */
+
+/* Large desktop — tighten card height slightly */
+@media screen and (max-width: 1366px) and (min-width: 1024px) {
+  .product-card-block {
+      height: 300px;
+  }
+
+  .card-button {
+      padding: 0.25rem 0.5rem;
+      font-size: 10.5px;
+      width: 90%;
+  }
+}
+
+/* Tablet landscape */
+@media screen and (max-width: 1023px) and (min-width: 900px) {
+  .product-card-block {
+      height: 250px;
+  }
+
+  .card-button {
+      padding: 0.25rem 0.5rem;
+      font-size: 10.5px;
+      width: 90%;
+  }
+}
+
+/* Collapse to single column on narrow viewports */
+@media (max-width: 768px) {
+  .product-card-grid {
+      grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+/* Hide home grid on tablet/mobile (existing behaviour) */
+@media screen and (max-width: 810px) {
+  #home-cat-card-grid {
+      display: none !important;
+  }
+}
+
+/* Landscape mobile and portrait narrow */
+@media (orientation: landscape) and (max-width: 900px),
+     (orientation: portrait) and (max-width: 700px) {
+  #home-cat-card-grid {
+      display: none !important;
+  }
+}

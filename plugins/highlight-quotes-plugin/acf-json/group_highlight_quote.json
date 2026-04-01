@@ -1,0 +1,102 @@
+{
+    "key": "group_highlight_quote",
+    "title": "Highlight Quote Block",
+    "fields": [
+        {
+            "key": "field_hq_text",
+            "label": "Quote Text",
+            "name": "hq_text",
+            "type": "textarea",
+            "instructions": "Enter the large highlight quote text.",
+            "required": 1,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_hq_alignment",
+            "label": "Alignment",
+            "name": "hq_alignment",
+            "type": "select",
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "default_value": "left",
+            "ui": 1
+        },
+        {
+            "key": "field_hq_icon",
+            "label": "Icon",
+            "name": "hq_icon",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_hq_border_style",
+            "label": "Border Style",
+            "name": "hq_border_style",
+            "type": "select",
+            "choices": {
+                "none": "None",
+                "subtle": "Subtle",
+                "thick": "Thick"
+            },
+            "default_value": "none",
+            "ui": 1
+        },
+        {
+            "key": "field_hq_shadow",
+            "label": "Drop Shadow",
+            "name": "hq_shadow",
+            "type": "true_false",
+            "ui": 1
+        },
+        {
+            "key": "field_hq_style_preset",
+            "label": "Style Preset",
+            "name": "hq_style_preset",
+            "type": "select",
+            "choices": {
+                "default": "Default",
+                "magazine": "Magazine Pull-Quote",
+                "boldbar": "Bold Highlight Bar",
+                "bubble": "Speech Bubble"
+            },
+            "default_value": "default",
+            "ui": 1
+        },
+        {
+            "key": "field_hq_preset_color",
+            "label": "Brand Color Preset",
+            "name": "hq_preset_color",
+            "type": "select",
+            "choices": {
+                "primary": "Primary",
+                "secondary": "Secondary",
+                "accent": "Accent",
+                "neutral": "Neutral",
+                "custom-1": "Custom 1",
+                "custom-2": "Custom 2"
+            },
+            "default_value": "primary",
+            "ui": 1
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "palmshield/highlight-quote"
+            }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "palmshield/highlight-box"
+            }
+        ]
+    ],
+    "active": true
+}

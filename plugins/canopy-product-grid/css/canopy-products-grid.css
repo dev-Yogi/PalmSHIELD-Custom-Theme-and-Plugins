@@ -1,0 +1,73 @@
+#canopy-products-grid {
+    clear: both;
+}
+.canopy-products-grid-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.canopy-product {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+.canopy-product a img{
+    border-radius: 10px;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+}
+.canopy-product-btn-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.canopy-grid-btn {
+    flex: 1 1 0;
+    min-width: 100px;
+    padding: 5px 0;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+}
+.canopy-more-details-btn {
+    background: #ef8d27;
+    color: #fff;
+}
+.canopy-more-details-btn:hover {
+    background: #fff;
+    color: #ef8d27;
+}
+.canopy-add-to-quote-btn {
+    background: #e02826;
+    color: #fff;
+    margin-top: 0;
+}
+.canopy-add-to-quote-btn:hover {
+    background: #fff;
+    color: #e02826;
+}
+.canopy-quote-status {
+    display: block;
+    margin-top: 0.5em;
+    color: green !important;
+}
+h2.canopy-products-grid-title{
+    color: #e02826;
+}
+h3.canopy-product-title{
+    margin: 0;
+    color: #ef8d27;
+    text-align: left;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: x-large;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+}

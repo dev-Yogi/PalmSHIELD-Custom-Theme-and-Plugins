@@ -1,0 +1,72 @@
+/* PALMSHADE SLIDER
+   ========================================================================== */
+/**
+*/
+
+#menu-header-menu li.menu-item a{
+	color: var(--wp--preset--color--palmshade-orange) !important;
+}
+
+.logo a img{
+    object-fit: cover;
+    height: auto
+}
+
+#main-body .container-fluid{
+    --bs-gutter-x: 0;
+}
+
+.custom-container{
+    max-width: 1650px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.wp-block-button__link{
+    background-color: var(--wp--preset--color--palmshade-orange) !important;
+    color: var(--wp--preset--color--base) !important;
+}
+.wc-block-grid__product-title{
+    color: var(--wp--preset--color--bright) !important;
+}
+.cad-dwnld-section{
+    position: relative;
+    padding-right: 10px; 
+}
+.cad-dwnld-section::after {
+    content: "";
+    position: absolute;
+    top: 10%; 
+    right: 0;
+    height: 60%; 
+    width: 2px; 
+    background-color: rgba(148, 148, 148, 0.884); 
+}
+.cad-dwnld-section:last-child::after {
+    content: none; 
+}
+.wc-block-grid__products .wc-block-grid__product-image img{
+    aspect-ratio: 3/2;
+    object-fit: contain;
+}
+
+.dwg-icon img,
+.pdf-icon img,
+.spec-icon img{
+    height: 80px;
+    object-fit: contain !important;
+}
+.dwnld-btn-wrapper{
+    gap: unset
+}
+
+footer{
+    background-color: var(--wp--preset--color--base);
+}
+
+footer,
+footer li a,
+footer h4,
+footer p.has-contrast-color{
+	color: var(--wp--preset--color--base) !important;
+}

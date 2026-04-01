@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "acf/product-category-card",
+    "title": "Product Category Card",
+    "description": "Displays a product category card with background image, overlay, and button.",
+    "category": "formatting",
+    "icon": "format-image",
+    "keywords": [ "card", "product", "category" ],
+    "usesContext": [ "productCardGrid/columns" ],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "template-product-card.php"
+    },
+    "viewScript": "file:../../card-block.js"
+}

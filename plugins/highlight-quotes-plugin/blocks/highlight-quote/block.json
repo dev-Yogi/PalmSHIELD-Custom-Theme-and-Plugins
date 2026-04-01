@@ -1,0 +1,12 @@
+{
+    "apiVersion": 2,
+    "name": "palmshield/highlight-quote",
+    "title": "Highlight Quote",
+    "category": "formatting",
+    "icon": "format-quote",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "style": "file:./style.css"
+}

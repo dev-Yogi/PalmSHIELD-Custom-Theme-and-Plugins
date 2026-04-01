@@ -1,0 +1,12 @@
+{
+    "apiVersion": 2,
+    "name": "palmshield/highlight-box",
+    "title": "Highlight Box",
+    "category": "formatting",
+    "icon": "align-center",
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "render.php"
+    },
+    "style": "file:./style.css"
+}
